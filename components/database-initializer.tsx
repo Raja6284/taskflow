@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { useEffect, useState, useRef } from "react"
@@ -23,16 +25,14 @@ export function DatabaseInitializer() {
         console.error("Failed to initialize database:", err)
         // Don't set error status immediately, give it a chance to retry
         setTimeout(() => {
-          if (status === "loading") {
-            setStatus("error")
-            setError(err instanceof Error ? err.message : "Unknown error")
-          }
+          setStatus("error")
+          setError(err instanceof Error ? err.message : "Unknown error")
         }, 5000)
       }
     }
 
     initDb()
-  }, [status])
+  }, []) // Empty dependency array to run only on mount
 
   if (status === "loading") {
     return (
