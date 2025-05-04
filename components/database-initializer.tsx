@@ -45,13 +45,17 @@ export function DatabaseInitializer() {
     )
   }
 
-  if (status === "error") {
-    return (
-      <Alert variant="destructive" className="mb-4">
-        <AlertTitle>Database Error</AlertTitle>
-        <AlertDescription>Failed to initialize database: {error || "Unknown error"}</AlertDescription>
-      </Alert>
-    )
+  // if (status === "error") {
+  //   return (
+  //     <Alert variant="destructive" className="mb-4">
+  //       <AlertTitle>Database Error</AlertTitle>
+  //       <AlertDescription>Failed to initialize database: {error || "Unknown error"}</AlertDescription>
+  //     </Alert>
+  //   )
+  // }
+
+  if(status==="error"){
+    console.log("Database Error", error)
   }
 
   return null
