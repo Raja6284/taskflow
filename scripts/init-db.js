@@ -85,7 +85,7 @@ async function initializeDatabase() {
       console.log("Sample tasks added successfully!")
     }
   } catch (error) {
-    console.error("Database initialization error:", error)
+    //console.error("Database initialization error:", error)
   } finally {
     await pool.end()
     console.log("Database connection closed")
